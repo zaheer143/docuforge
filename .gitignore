@@ -1,0 +1,6 @@
+node_modules
+.next
+uploads
+converted
+.env
+.DS_Store
