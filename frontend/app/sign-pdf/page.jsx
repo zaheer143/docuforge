@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import pdfjsLib from "@/lib/pdfjs";
+import pdfjsLib from "../../lib/pdfjs";
+
 
 // ✅ pdf.js worker fix for Next.js
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
