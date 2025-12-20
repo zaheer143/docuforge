@@ -7,6 +7,17 @@ import pdfjsLib from "../../lib/pdfjs";
 // ✅ pdf.js worker fix for Next.js
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
+const getAuthHeaders = () => {
+  const token =
+    localStorage.getItem("token") ||
+    localStorage.getItem("auth_token") ||
+    localStorage.getItem("jwt") ||
+    localStorage.getItem("pro_token") ||
+    "";
+
+  return token ? { Authorization: `Bearer ${token}` } : {};
+};
+
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3001";
 
@@ -694,6 +705,10 @@ export default function SignPdfDay4() {
       const res = await fetch(`${API_BASE}/sign-pdf/apply-multi`, {
         method: "POST",
         body: form,
+        headers: {
+          ...getAuthHeaders(),
+        },
+        credentials: "include",
       });
 
       if (!res.ok) {
@@ -738,6 +753,10 @@ export default function SignPdfDay4() {
       const res = await fetch(`${API_BASE}/sign-pdf/certificate`, {
         method: "POST",
         body: form,
+        headers: {
+          ...getAuthHeaders(),
+        },
+        credentials: "include",
       });
 
       if (!res.ok) {
