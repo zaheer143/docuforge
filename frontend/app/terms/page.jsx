@@ -1,5 +1,6 @@
 // frontend/app/terms/page.jsx
-import LegalShell from "@/components/LegalShell";
+import LegalShell from "../../components/LegalShell";
+
 
 export const metadata = {
   title: "Terms & Conditions - DocuForge",

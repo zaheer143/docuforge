@@ -1,5 +1,6 @@
 // frontend/app/privacy/page.jsx
-import LegalShell from "@/components/LegalShell";
+import LegalShell from "../../components/LegalShell";
+
 
 export const metadata = {
   title: "Privacy Policy - DocuForge",

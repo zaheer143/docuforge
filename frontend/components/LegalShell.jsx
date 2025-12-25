@@ -1,78 +1,24 @@
-// frontend/app/pricing/page.jsx
-import Link from "next/link";
-import LegalShell from "@/components/LegalShell";
+// frontend/components/LegalShell.jsx
+import SiteFooter from "./SiteFooter";
 
-export const metadata = {
-  title: "Pricing - DocuForge",
-};
-
-export default function PricingPage() {
+export default function LegalShell({ title, subtitle, children }) {
   return (
-    <LegalShell
-      title="Pricing"
-      subtitle="All prices are in INR (₹). Choose a plan that fits your usage."
-    >
-      <div className="grid2">
-        <div className="plan">
-          <div className="planTitleRow">
-            <h2 className="planName">Starter Plan</h2>
-            <p className="planPrice">₹199 / month</p>
+    <div className="legalWrap">
+      <div className="legalContainer">
+        <div className="legalCard">
+          <div className="legalHeader">
+            <div>
+              <h1 className="legalTitle">{title}</h1>
+              {subtitle ? <p className="legalSubtitle">{subtitle}</p> : null}
+            </div>
           </div>
 
-          <ul className="ul">
-            <li>Upload & sign up to 20 documents</li>
-            <li>Basic e-signature</li>
-            <li>Email delivery</li>
-            <li>Audit trail</li>
-          </ul>
-
-          <div className="btnRow">
-            <button
-              className="btnPrimary"
-              onClick={() => alert("Payment integration next. KYC first.")}
-            >
-              Buy Now
-            </button>
-            <Link className="btnGhost" href="/">
-              Back to Home
-            </Link>
-          </div>
+          <div className="legalDivider" />
+          <div className="legalText">{children}</div>
         </div>
 
-        <div className="plan">
-          <div className="planTitleRow">
-            <h2 className="planName">Professional Plan</h2>
-            <p className="planPrice">₹999 / year</p>
-          </div>
-
-          <ul className="ul">
-            <li>Unlimited documents</li>
-            <li>Advanced e-signature</li>
-            <li>Download signed PDFs</li>
-            <li>Certificate of completion</li>
-            <li>Priority support</li>
-          </ul>
-
-          <div className="btnRow">
-            <button
-              className="btnPrimary"
-              onClick={() => alert("Payment integration next. KYC first.")}
-            >
-              Buy Now
-            </button>
-            <Link className="btnGhost" href="/">
-              Back to Home
-            </Link>
-          </div>
-        </div>
+        <SiteFooter />
       </div>
-
-      <div className="legalDivider" />
-
-      <p>
-        Need help? Email{" "}
-        <a href="mailto:support@docuforge.in">support@docuforge.in</a>.
-      </p>
-    </LegalShell>
+    </div>
   );
 }

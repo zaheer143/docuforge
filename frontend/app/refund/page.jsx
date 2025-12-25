@@ -1,5 +1,6 @@
 // frontend/app/refund/page.jsx
-import LegalShell from "@/components/LegalShell";
+import LegalShell from "../../components/LegalShell";
+
 
 export const metadata = {
   title: "Refund & Cancellation Policy - DocuForge",
