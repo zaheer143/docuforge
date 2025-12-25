@@ -1,0 +1,176 @@
+/* app/legal.css */
+.legalWrap {
+    min-height: 100vh;
+    background: radial-gradient(1200px 700px at 20% 10%, rgba(236, 72, 153, 0.18), transparent 60%),
+                radial-gradient(900px 600px at 80% 20%, rgba(168, 85, 247, 0.18), transparent 55%),
+                linear-gradient(180deg, #0b0b14 0%, #0a0a12 100%);
+    color: #e9e9f1;
+    padding: 24px 16px 60px;
+  }
+  
+  .legalContainer {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .legalCard {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .legalHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  
+  .legalTitle {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  
+  .legalSubtitle {
+    margin: 8px 0 0;
+    color: rgba(233, 233, 241, 0.75);
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  
+  .legalDivider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.10);
+    margin: 16px 0;
+  }
+  
+  .legalText {
+    color: rgba(233, 233, 241, 0.82);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  
+  .legalText h2 {
+    margin: 18px 0 8px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  @media (max-width: 760px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+  
+  .plan {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    padding: 16px;
+  }
+  
+  .planTitleRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .planName {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+  }
+  
+  .planPrice {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+    color: rgba(233, 233, 241, 0.85);
+  }
+  
+  .btnRow {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .btnPrimary {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 800;
+    color: #0b0b14;
+    background: linear-gradient(90deg, #ec4899, #a855f7);
+  }
+  
+  .btnGhost {
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 800;
+    color: rgba(233, 233, 241, 0.9);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  /* Footer */
+  .siteFooter {
+    max-width: 980px;
+    margin: 20px auto 0;
+    padding: 14px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  
+  .footerRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+  }
+  
+  .footerLinks a {
+    color: rgba(233, 233, 241, 0.85);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  .footerLinks a:hover {
+    text-decoration: underline;
+  }
+  
+  .footerMeta {
+    color: rgba(233, 233, 241, 0.70);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  

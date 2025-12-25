@@ -1,3 +1,4 @@
+import "./legal.css";
 export const metadata = {
   title: "docusignpdf",
   description: "PDF Sign tool (Day 1: preview)",

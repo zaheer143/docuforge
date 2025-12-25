@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from "../../components/SiteFooter";
+
 import { useEffect, useState } from "react";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3001";
@@ -57,7 +59,9 @@ export default function PricingPage() {
 
           localStorage.setItem(TOKEN_KEY, vdata.token);
           setHasPro(true);
-          setMsg("✅ Pro unlocked on this device. You can now remove watermark, download certificate and email documents.");
+          setMsg(
+            "✅ Pro unlocked on this device. You can now remove watermark, download certificate and email documents."
+          );
         },
         modal: {
           ondismiss: function () {
@@ -83,63 +87,70 @@ export default function PricingPage() {
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.card}>
-        <div style={styles.badge}>MONETIZATION READY</div>
-        <h1 style={styles.title}>SignForge Pro</h1>
-        <p style={styles.sub}>
-          Pay once per month to unlock the features businesses actually pay for.
-        </p>
+    <>
+      <div style={styles.page}>
+        <div style={styles.card}>
+          <div style={styles.badge}>MONETIZATION READY</div>
+          <h1 style={styles.title}>SignForge Pro</h1>
+          <p style={styles.sub}>
+            Pay once per month to unlock the features businesses actually pay for.
+          </p>
 
-        <div style={styles.grid}>
-          <div style={styles.box}>
-            <h3 style={styles.h3}>Free</h3>
-            <ul style={styles.ul}>
-              <li>✔ Sign & download</li>
-              <li>✔ Basic audit page</li>
-              <li>✖ Watermark removed</li>
-              <li>✖ Certificate PDF</li>
-              <li>✖ Email delivery</li>
-            </ul>
+          <div style={styles.grid}>
+            <div style={styles.box}>
+              <h3 style={styles.h3}>Free</h3>
+              <ul style={styles.ul}>
+                <li>✔ Sign & download</li>
+                <li>✔ Basic audit page</li>
+                <li>✖ Watermark removed</li>
+                <li>✖ Certificate PDF</li>
+                <li>✖ Email delivery</li>
+              </ul>
+            </div>
+
+            <div style={styles.boxPro}>
+              <h3 style={styles.h3}>Pro</h3>
+              <div style={styles.price}>₹299 / month</div>
+              <ul style={styles.ul}>
+                <li>✔ No watermark</li>
+                <li>✔ Certificate PDF</li>
+                <li>✔ Email signed + certificate</li>
+                <li>✔ Multi-signer support</li>
+              </ul>
+            </div>
           </div>
 
-          <div style={styles.boxPro}>
-            <h3 style={styles.h3}>Pro</h3>
-            <div style={styles.price}>₹299 / month</div>
-            <ul style={styles.ul}>
-              <li>✔ No watermark</li>
-              <li>✔ Certificate PDF</li>
-              <li>✔ Email signed + certificate</li>
-              <li>✔ Multi-signer support</li>
-            </ul>
+          {!hasPro ? (
+            <button onClick={buy} disabled={loading} style={styles.btn}>
+              {loading ? "Opening checkout..." : "Upgrade via Razorpay"}
+            </button>
+          ) : (
+            <div style={{ display: "grid", gap: 10 }}>
+              <div style={styles.proOn}>✅ Pro is active on this device</div>
+              <button onClick={clearPro} style={styles.btnGhost}>
+                Remove Pro Token (testing)
+              </button>
+            </div>
+          )}
+
+          {msg ? <div style={styles.msg}>{msg}</div> : null}
+
+          <div style={styles.links}>
+            <a href="/" style={styles.link}>
+              ← Home
+            </a>
+            <a href="/sign-pdf" style={styles.link}>
+              Go to Sign PDF →
+            </a>
           </div>
         </div>
 
-        {!hasPro ? (
-          <button onClick={buy} disabled={loading} style={styles.btn}>
-            {loading ? "Opening checkout..." : "Upgrade via Razorpay"}
-          </button>
-        ) : (
-          <div style={{ display: "grid", gap: 10 }}>
-            <div style={styles.proOn}>✅ Pro is active on this device</div>
-            <button onClick={clearPro} style={styles.btnGhost}>
-              Remove Pro Token (testing)
-            </button>
-          </div>
-        )}
-
-        {msg ? <div style={styles.msg}>{msg}</div> : null}
-
-        <div style={styles.links}>
-          <a href="/" style={styles.link}>
-            ← Home
-          </a>
-          <a href="/sign-pdf" style={styles.link}>
-            Go to Sign PDF →
-          </a>
+        {/* Footer (Razorpay compliance links) */}
+        <div style={{ width: "min(720px, 94vw)", marginTop: 16 }}>
+          <SiteFooter />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
